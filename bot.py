@@ -138,6 +138,13 @@ async def get_chart(interaction: discord.Interaction, symbol: str, days: int = 3
             plt.plot(dates, closes, linewidth=2, color='#00A3E0')
             plt.fill_between(dates, closes, alpha=0.3, color='#00A3E0')
             
+            min_price = min(closes)
+            max_price = max(closes)
+            price_range = max_price - min_price
+            padding = price_range * 0.05  # 5% padding
+            
+            plt.ylim(min_price - padding, max_price + padding)
+            
             plt.title(f'{symbol} Stock Price - Last {days} Days', fontsize=16, fontweight='bold')
             plt.xlabel('Date', fontsize=12)
             plt.ylabel('Price ($)', fontsize=12)
