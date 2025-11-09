@@ -1,0 +1,9 @@
+discord.py>=2.3.0
+python-dotenv
+matplotlib
+alpaca-py
+matplotlib
+pandas
+requests
+yfinance
+quantstats
